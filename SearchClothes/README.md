@@ -1,1 +1,0 @@
-# Buscador de ropa
