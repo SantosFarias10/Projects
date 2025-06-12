@@ -41,13 +41,13 @@ public class Adivina {
           if (diferenciaActual < diferenciaAnterior) {
             System.out.println("🔥Caliente! Te estás acercando.");
           } else if (diferenciaActual > diferenciaAnterior) {
-            System.out.println("🧊 Frío... te estás alejando. Tu numero es mas chico");
+            System.out.println("🧊 Frío... te estás alejando.");
           } else {
             System.out.println("Igual de lejos que antes");
           }
         }
 
-        diferenciaAnterior = diferenciaActual;
+        diferenciaAnterior = Math.min(diferenciaActual, diferenciaAnterior);
       }
 
       intentos++;
