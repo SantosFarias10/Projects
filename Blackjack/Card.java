@@ -1,9 +1,9 @@
-public class card {
+public class Card {
     private String suit;    // Palo: Corazon, Diamante, Trebol, Pica.
     private String rank;    // 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A.
     private int value;      // J=10, Q=10, K=10, A=11.
 
-    public card(String suit, String rank, int value){
+    public Card(String suit, String rank, int value){
         this.suit = suit;
         this.rank = rank;
         this.value = value;
