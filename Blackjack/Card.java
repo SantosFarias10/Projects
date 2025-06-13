@@ -10,7 +10,7 @@ public class Card {
     }
 
     // Metodo para verificar si son del mismo numero
-    public boolean equalsRank(card c1, card c2) {
+    public boolean equalsRank(Card c1, Card c2) {
         return c1.getRank().equals(c2.getRank());
     }
 
