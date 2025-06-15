@@ -10,21 +10,20 @@ public class Adivina {
     int numeroAleatorio = random.nextInt(100) + 1;
     int intentos = 1;
     int numeroUser;
-    int diferenciaActual;
-    int diferenciaAnterior = Integer.MAX_VALUE;
+    int diferencia;
     
     System.out.println("Bienvenido al juego de adivina el numero");
     System.out.println("Intenta adivinar el numero entre 1 y 100");
     System.out.println("Tienes 10 intentos");
   
     while(intentos <= 10) {
-      System.out.println("------------------------------");
+        System.out.println("------------------------------");
       System.out.println("Intento " + intentos + " de 10");
       System.out.println("Introduce un numero: ");
 
       numeroUser = scanner.nextInt();
 
-      diferenciaActual = Math.abs(numeroUser - numeroAleatorio);
+      diferencia = Math.abs(numeroUser - numeroAleatorio);
 
       if(numeroUser == numeroAleatorio) {
         System.out.println("Felicitaciones!!! Has adivinado el numero");
@@ -36,18 +35,19 @@ public class Adivina {
             System.out.println("Tu numero es mas grande que el numero escondido");
           } else if (numeroUser < numeroAleatorio) {
             System.out.println("Tu numero es mas chico que el numero escondido");
+          } else {
+            System.out.println("Felicitaciones!!! Has adivinado el numero");
           }
         } else { 
-          if (diferenciaActual < diferenciaAnterior) {
+          if (5 <= diferencia && diferencia <= 10) {
             System.out.println("🔥Caliente! Te estás acercando.");
-          } else if (diferenciaActual > diferenciaAnterior) {
-            System.out.println("🧊 Frío... te estás alejando.");
+          } else if (10 < diferencia && diferencia <= 20) {
+            System.out.println("Tibio");
           } else {
-            System.out.println("Igual de lejos que antes");
+            System.out.println("🧊 Frío...");
           }
         }
 
-        diferenciaAnterior = Math.min(diferenciaActual, diferenciaAnterior);
       }
 
       intentos++;
