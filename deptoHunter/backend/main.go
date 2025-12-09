@@ -9,10 +9,15 @@ import (
 	// framework web
 	// facilita la creciacion de APIs REST, maneja endpoints, procesa JSON, incluye middleware (autenticacion, logging, ...)
 	"github.com/gin-gonic/gin"
-	// Paquete que contiene la estructura de datos Depto
+
+	// Paquete que contiene la conexion a la base de datos
+	"github.com/SantosFarias10/deptoHunter/config"
 )
 
 func main() {
+	// Conectamos a la base de datos
+	config.ConnectDB()
+
 	// Inicializamos el server con Logger + Recovery
 	// Basicamente inicializamos el router con middleware, si ocurre un error lo captura y evita que el server se caiga
 	router := gin.Default()
@@ -23,20 +28,17 @@ func main() {
 	router.GET("/ping", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"mensaje": "Hello World!",
-			"estado":  "Ready",
 		})
 	})
 	*/
 
 	type Response struct {
 		Mensaje string `json:"mensaje"`
-		Estado  string `json:"estado"`
 	}
 
 	router.GET("/ping", func(c *gin.Context) {
 		c.JSON(http.StatusOK, Response{
-			Mensaje: "Hello World!",
-			Estado:  "Ready",
+			Mensaje: "Base de Datos conectada!",
 		})
 	})
 
