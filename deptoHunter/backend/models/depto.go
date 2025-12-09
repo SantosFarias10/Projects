@@ -33,4 +33,5 @@ type HistorialPrecio struct {
 	DeptoID uint    `gorm:"not null"`
 	Precio  float64 `gorm:"not null"`
 	Fecha   time.Time
+	Moneda  string `gorm:"size:10;not null" json:"moneda"`
 }
