@@ -9,6 +9,7 @@ import (
 	// framework web
 	// facilita la creciacion de APIs REST, maneja endpoints, procesa JSON, incluye middleware (autenticacion, logging, ...)
 	"github.com/gin-gonic/gin"
+	// Paquete que contiene la estructura de datos Depto
 )
 
 func main() {
