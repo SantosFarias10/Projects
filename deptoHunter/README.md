@@ -45,3 +45,17 @@ Este proyecto utiliza una arquitectura moderna de cliente-servidor (Frontend y B
 * **Estilos:** `Tailwind CSS` (Para un diseño rápido, responsivo y moderno).
 * **Gráficos:** `Recharts` o `Chart.js` (Para visualizar la línea de tiempo de los precios).
 * **Conexión:** `Axios` o `Fetch` (Para consumir la API de Python).
+
+## Estructura
+
+```
+backend/
+│
+├── config/          # Configuración de la DB
+├── models/          # Aquí definiremos cómo se ve un "Departamento" (Estructuras)
+├── routes/          # Aquí definiremos las URLs (endpoints)
+├── scraper/         # Aquí vivirá la lógica de extracción de datos
+├── main.go          # El punto de entrada de la app
+└── go.mod           # (Ya se creó solo)
+
+```
