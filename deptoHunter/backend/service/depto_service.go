@@ -35,6 +35,27 @@ func ProcesarDepto(titulo, url, ubicacion string, habitaciones int, baños int, 
 		fmt.Printf("Nuevo Departament: %s - %s | %.2f\n", titulo, moneda, precio)
 	} else {
 		// Caso 2: existe, por lo que verificamos si cambio de precio
+
+		huboCambio := false
+
+		if departamento.Habitaciones == 0 && habitaciones > 0 {
+			departamento.Habitaciones = habitaciones
+			huboCambio = true
+		}
+		if departamento.Baños == 0 && baños > 0 {
+			departamento.Baños = baños
+			huboCambio = true
+		}
+		if (departamento.Ubicacion == "" || departamento.Ubicacion == departamento.Titulo) && ubicacion != "" {
+			departamento.Ubicacion = ubicacion
+			huboCambio = true
+		}
+
+		if huboCambio {
+			config.DB.Save(&departamento)
+			fmt.Printf("Departamento actualizado: %s\n", departamento.Titulo)
+		}
+
 		verificarCambioDePrecio(departamento, precio, moneda)
 	}
 }
